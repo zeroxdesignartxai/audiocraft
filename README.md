@@ -67,6 +67,35 @@ Hugging Face stored the model in a specific location, which can be overridden by
 In order to change the cache location of the other Hugging Face models, please check out the [Hugging Face Transformers documentation for the cache setup](https://huggingface.co/docs/transformers/installation#cache-setup).
 Finally, if you use a model that relies on Demucs (e.g. `musicgen-melody`) and want to change the download location for Demucs, refer to the [Torch Hub documentation](https://pytorch.org/docs/stable/hub.html#where-are-my-downloaded-models-saved).
 
+## Running and Deploying with GitHub Actions
+
+This repository is configured to run and deploy using GitHub Actions workflows. Below are the details of the existing workflows and their purposes:
+
+1. **Build Action** (`.github/actions/audiocraft_build/action.yml`):
+   - Sets up a Python environment, installs dependencies, and caches the environment.
+
+2. **Documentation Workflow** (`.github/workflows/audiocraft_docs.yml`):
+   - Generates API documentation and pushes it to the `gh-docs` branch.
+
+3. **Linter Workflow** (`.github/workflows/audiocraft_linter.yml`):
+   - Runs linters on push and pull request events to the `main` branch.
+
+4. **Tests Workflow** (`.github/workflows/audiocraft_tests.yml`):
+   - Runs unit and integration tests on push and pull request events to the `main` branch.
+
+To run and deploy the project using GitHub Actions, follow these steps:
+
+1. **Fork the Repository**:
+   - Fork the repository to your GitHub account.
+
+2. **Enable GitHub Actions**:
+   - Go to the "Actions" tab of your forked repository and enable GitHub Actions.
+
+3. **Push Changes**:
+   - Make changes to the code and push them to your forked repository. The GitHub Actions workflows will automatically run based on the configured events (e.g., push, pull request).
+
+4. **Monitor Workflows**:
+   - Monitor the progress and results of the workflows in the "Actions" tab of your repository.
 
 ## License
 * The code in this repository is released under the MIT license as found in the [LICENSE file](LICENSE).
